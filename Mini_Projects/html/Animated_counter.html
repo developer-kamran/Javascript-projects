@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <title>Animated Counter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: url('https://i.pinimg.com/originals/3c/24/46/3c24462450c2a902bf7e18f3d9aada81.jpg');
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        header h1 {
+            font-size: 50px;
+        }
+
+        .counters {
+            background: #0f479a;
+            color: white;
+            border-top: 3px lightblue solid;
+            padding: 40px 0;
+
+        }
+
+        .counters .container {
+            display: grid;
+            grid-gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: auto;
+        }
+
+        .counter {
+            font-size: 45px;
+            margin: 10px 0;
+        }
+
+        .counters i {
+            color: white;
+            margin-bottom: 5px;
+
+        }
+
+
+        @media(max-width:700px) {
+            .counters .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .counters .container>div:nth-of-type(1),
+            .counters .container>div:nth-of-type(2) {
+                border-bottom: 1px solid lightskyblue;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Animated Counter</h1>
+    </header>
+
+    <section class="counters">
+        <div class="container">
+
+            <div>
+                <i class="fab fa-youtube fa-4x"></i>
+                <div class="counter" data-target="60000">0</div>
+                <h3>Subscriber</h3>
+            </div>
+            <div>
+                <i class="fab fa-facebook fa-4x"></i>
+                <div class="counter" data-target="1500000">0</div>
+                <h3>Likes</h3>
+
+            </div>
+            <div>
+                <i class="fab fa-instagram fa-4x"></i>
+                <div class="counter" data-target="900000">0</div>
+                <h3>Followers</h3>
+
+            </div>
+            <div>
+                <i class="fab fa-linkedin fa-4x"></i>
+                <div class="counter" data-target="400000">0</div>
+                <h3>Connection</h3>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+<script>
+
+    let counters = document.querySelectorAll('.counter');
+    let speed = 200;
+
+    counters.forEach((counter) => {
+        const updateCount = () => {
+            let target = +counter.getAttribute('data-target')
+            let count = +counter.innerText
+            let inc = target / speed
+            if (count < target) {
+                counter.innerText = count + inc
+                setTimeout(updateCount, 1)
+            }
+            else {
+                count.innerText = target
+            }
+        }
+        updateCount();
+    })
+
+
+</script>
+
+</html>

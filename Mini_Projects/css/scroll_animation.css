@@ -1,0 +1,71 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar-brand {
+    font-size  : 25px;
+    font-weight: bold;
+}
+
+img {
+    width : 430px;
+    height: 380px;
+}
+
+.showcase-right>h1 {
+    font-size    : 50px;
+    margin-bottom: 20px;
+}
+
+.showcase-right p {
+    font-size: 20px;
+}
+
+#testimonial p {
+    font-size  : 32px;
+    font-family: 'Josefin Sans';
+
+}
+
+#testimonial p.customer {
+    font-size: 25px;
+    color    : #999;
+}
+
+#testimonial p>span {
+    font-weight: 900;
+    font-size  : 38px;
+    color      : #fff;
+    margin     : 5px;
+}
+
+.info-left img {
+    height       : 400px;
+    width        : 550px;
+    border-radius: 10px;
+}
+
+.info-right h2 {
+    font-size: 42px;
+    color    : #222;
+}
+
+.info-right p {
+    font-weight: 400;
+    font-size  : 23px;
+}
+
+#contact {
+    background-image   : url(../images/google_contact.jpg);
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    border-top         : #333 7px solid;
+    border-bottom      : #333 7px solid;
+}

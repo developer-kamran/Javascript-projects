@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/tabs.css">
+  <title>Tabs</title>
+</head>
+
+<body>
+
+  <section class="section">
+    <div class="title">
+      <h2>about us</h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="about-center section-center">
+      <article class="about-img">
+        <img
+          src="https://github.com/john-smilga/javascript-basic-projects/blob/master/11-tabs/final/hero-bcg.jpeg?raw=true"
+          alt="" />
+      </article>
+      <article class="about">
+        <!-- btn container -->
+        <div class="btn-container">
+          <button class="tab-btn active" data-id="history">history</button>
+          <button class="tab-btn" data-id="vision">vision</button>
+          <button class="tab-btn" data-id="goals">goals</button>
+        </div>
+        <div class="about-content">
+          <!-- single item -->
+          <div class="content active" id="history">
+            <h4>history</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, cumque. Rem natus nulla voluptate
+              necessitatibus cum provident distinctio in, neque optio quis vel quasi nisi saepe? Voluptate laboriosam
+              dolorum libero nisi, iusto sed quia, illum nihil nostrum fugit deserunt. Ab, nam iure! Soluta ex fugit
+              rem, recusandae consequatur, provident qui ullam illum minus cum laudantium reprehenderit quaerat neque
+              natus iusto.
+            </p>
+          </div>
+          <!-- end of single item -->
+          <!-- single item -->
+          <div class="content" id="vision">
+            <h4>vision</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt velit asperiores sapiente! Culpa animi
+              dolor eaque officiis repellendus, voluptate corrupti ipsa, inventore autem optio sapiente aliquid amet.
+              Sit debitis quod quisquam libero impedit, quae neque sed doloribus maxime quaerat, mollitia accusantium,
+              quos fugit ut. Quidem laboriosam mollitia nostrum sint, nulla nesciunt laudantium eius, excepturi quam
+              voluptas deserunt dolor expedita iusto.
+            </p>
+          </div>
+          <!-- end of single item -->
+          <!-- single item -->
+          <div class="content" id="goals">
+            <h4>goals</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quisquam aliquam, repudiandae tempora
+              maiores mollitia eum cum, minus ex aperiam quis ratione facilis iusto autem, nobis ea dicta esse ullam
+              perspiciatis consequuntur sapiente itaque accusantium explicabo. Molestiae iure obcaecati et explicabo
+              vitae unde est repellendus hic error sapiente aspernatur adipisci nemo, amet provident doloribus sint
+              similique, suscipit sit optio commodi.
+            </p>
+          </div>
+          <!-- end of single item -->
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+</body>
+<script>
+
+  const btns = document.querySelectorAll('.tab-btn');
+  const about = document.querySelector('.about');
+  const articles = document.querySelectorAll('.content');
+
+  about.addEventListener('click', (e) => {
+    const id = e.target.dataset.id;
+    if (id !== '') {
+
+      //remove active from all buttons
+      btns.forEach((btn) => {
+        btn.classList.remove('active');
+        e.target.classList.add('active');
+      });
+      //hide other articles 
+      articles.forEach((article) => {
+        article.classList.remove('active');
+        const element = document.querySelector('#' + id);
+        element.classList.add('active');
+      })
+
+    }
+
+
+  });
+
+</script>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .button {
+            background: rgb(247, 129, 86);
+            padding: 16px 32px;
+            color: white;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        .button:hover {
+            background: rgb(236, 177, 177);
+            color: white;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            /* overflow: auto; */
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 20% auto;
+            padding: 20px;
+            width: 70%;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+            animation-name: modalOpen;
+            animation-duration: 1s;
+
+        }
+
+        @keyframes modalOpen {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+        .closeBtn {
+            color: #999;
+            float: right;
+            font-size: 30px;
+        }
+
+        .closeBtn:hover,
+        .closeBtn:focus {
+            color: red;
+            text-decoration: none;
+            cursor: pointer;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <button id="modalBtn" class="button">
+        Click Here
+    </button>
+    <div class="modal" id="simpleModal">
+        <div class="modal-content">
+
+            <span class="closeBtn">&times;</span>
+            <p>Hello I am a Modal</p>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    // get open modal button
+    let modalBtn = document.getElementById('modalBtn')
+    // get modal element
+    var modal = document.getElementById('simpleModal')
+    //get close button
+    let closeBtn = document.getElementsByClassName('closeBtn')[0]
+
+    //listen for open click
+    modalBtn.addEventListener('click', openModal)
+    function openModal() {
+        simpleModal.style.display = 'block'
+    }
+    //listen for close click
+    closeBtn.addEventListener('click', closeModal)
+    function closeModal() {
+        modal.style.display = 'none'
+    }
+    //outside click
+    window.addEventListener
+        ('click', clickOutside)
+    function clickOutside(e) {
+        if (e.target == modal)
+            modal.style.display = 'none'
+    }
+
+</script>
+
+</html>

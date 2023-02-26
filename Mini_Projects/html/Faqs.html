@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/question.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <title> FAQS</title>
+</head>
+
+<body>
+    <section class="questions">
+
+        <!-- title -->
+        <div class="title">
+            <h2>General Question</h2>
+        </div>
+
+        <!-- questions -->
+        <div class="section-center">
+
+            <!-- single question -->
+            <article class="question">
+                <!-- question title -->
+                <div class="question-title">
+                    <p>Do You Accept All Major Credit Cards.</p>
+                    <button type="button " class="question-btn">
+                        <span class="plus-icon">
+                            <i class="fas fa-plus-square"></i>
+                        </span>
+                        <span class="minus-icon">
+                            <i class="fas fa-minus-square"></i>
+                        </span>
+                    </button>
+                </div>
+                <!-- question text -->
+                <div class="question-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eum provident ea autem hic
+                        dolores, ratione nulla et fuga aliquid earum maxime illum optio expedita voluptas mollitia
+                        commodi. Molestias, ipsa.</p>
+                </div>
+            </article>
+            <!-- end single question -->
+
+            <!-- second question -->
+            <article class="question">
+                <!-- question title -->
+                <div class="question-title">
+                    <p>Do You Use Organic Ingredients?</p>
+                    <button type="button " class="question-btn">
+                        <span class="plus-icon">
+                            <i class="fas fa-plus-square"></i>
+                        </span>
+                        <span class="minus-icon">
+                            <i class="fas fa-minus-square"></i>
+                        </span>
+                    </button>
+                </div>
+                <!-- question text -->
+                <div class="question-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eum provident ea autem hic
+                        dolores, ratione nulla et fuga aliquid earum maxime illum optio expedita voluptas mollitia
+                        commodi. Molestias, ipsa.</p>
+                </div>
+            </article>
+            <!-- end second question -->
+
+            <!-- third question -->
+            <article class="question">
+                <!-- question title -->
+                <div class="question-title">
+                    <p>Do You Support Local Farmer</p>
+                    <button type="button " class="question-btn">
+                        <span class="plus-icon">
+                            <i class="fas fa-plus-square"></i>
+                        </span>
+                        <span class="minus-icon">
+                            <i class="fas fa-minus-square"></i>
+                        </span>
+                    </button>
+                </div>
+                <!-- question text -->
+                <div class="question-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eum provident ea autem hic
+                        dolores, ratione nulla et fuga aliquid earum maxime illum optio expedita voluptas mollitia
+                        commodi. Molestias, ipsa.</p>
+                </div>
+            </article>
+            <!-- end third question -->
+
+        </div>
+
+    </section>
+</body>
+<script>
+
+    //using selectors inside the element
+    const questions = document.querySelectorAll('.question')
+    questions.forEach((question) => {
+        // console.log(question)
+        const btn = question.querySelector('.question-btn')
+        btn.addEventListener('click', () => {
+
+            questions.forEach((item) => {
+                // console.log(item)
+                if (item !== question) {
+                    item.classList.remove('show-text')
+                }
+
+            })
+            question.classList.toggle('show-text')
+        })
+    })
+
+
+//Traversing DOM
+// const btns=document.querySelectorAll('.question-btn');
+// btns.forEach((btn)=>{
+//     btn.addEventListener('click',(e)=>{
+//      const question=  e.currentTarget.parentElement.parentElement
+//      question.classList.toggle('show-text')
+//     })
+// })
+
+
+
+</script>
+
+</html>

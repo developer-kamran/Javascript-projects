@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <title>Responsive Navbar</title>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="nav-center">
+
+            <div class="nav-header">
+                <img src="https://raw.githubusercontent.com/john-smilga/javascript-basic-projects/cf1a131310f6ec46ace369e84cb13280c92c765a/04-navbar/final/logo.svg"
+                    alt="">
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- links -->
+            <ul class="links">
+                <li>
+                    <a href="index.html">home</a>
+                </li>
+                <li>
+                    <a href="about.html">about</a>
+                </li>
+                <li>
+                    <a href="projects.html">projects</a>
+                </li>
+                <li>
+                    <a href="contact.html">contact</a>
+                </li>
+            </ul>
+            <!-- social media -->
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.twitter.com">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com">
+                        <i class="fab fa-sketch"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</body>
+<script>
+    //classList show /gets all classes
+    //contains -check classlsit for specific class
+    //add -add class
+    //remove -remove class
+    //toggle -toggle class
+
+    const navToggle = document.querySelector('.nav-toggle')
+    const links = document.querySelector('.links')
+
+    navToggle.addEventListener('click', () => {
+        // console.log(links.classList.contains('links'))
+
+        // if (links.classList.contains('show-links')) {
+        //     links.classList.remove('show-links')
+        // }
+        // else {
+        //     links.classList.add('show-links')
+        // }
+        links.classList.toggle('show-links')
+
+
+    })
+    const btn = document.querySelector('.fa-bars')
+    btn.addEventListener('click', () => {
+        if (btn.classList.contains('fa-bars')) {
+            btn.classList.remove('fa-bars')
+            btn.classList.add('fa-times')
+        }
+        else {
+            btn.classList.add('fa-bars')
+            btn.classList.remove('fa-times')
+
+        }
+    })
+
+</script>
+
+</html>

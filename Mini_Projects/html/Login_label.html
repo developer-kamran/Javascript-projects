@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login_label.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Please Login!</h1>
+
+        <form action="">
+            <div class="form-control">
+                <input type="text" required></input>
+                <label>Email</label>
+                <!-- <label>
+                    <span style="transition-delay: 0ms;">E</span>
+                    <span style="transition-delay: 50ms;">m</span>
+                    <span style="transition-delay: 100ms;">a</span>
+                    <span style="transition-delay: 150ms;">i</span>
+                    <span style="transition-delay: 200ms;">l</span>
+                </label> -->
+            </div>
+
+            <div class="form-control">
+                <input type="password" required />
+                <label>Password</label>
+            </div>
+
+            <button class="btn">Login</button>
+            <p class="text">Don't have an account? <a href="">Register</a></p>
+        </form>
+
+    </div>
+
+</body>
+<script>
+    const label = document.querySelectorAll('.form-control label')
+
+    label.forEach((label) => {
+        let result = label.innerHTML
+            .split('')
+            // it will break this into the Array
+            // console.log(result);
+            .map((letter, index) => `<span style="transition-delay:${index * 50}ms;">${letter}</span>`)
+            .join('')
+        label.innerHTML = result
+    })
+
+</script>
+
+</html>

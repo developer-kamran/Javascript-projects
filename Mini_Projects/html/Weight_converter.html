@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <style>
+        body {
+            background: #fff;
+            color: black;
+            margin-top: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+
+
+        header {
+            font-size: 20px;
+
+        }
+
+        #input {
+            padding: 8px;
+            width: 40%;
+            border: transparent;
+            border-bottom: 1px solid #999;
+            margin-bottom: 10px;
+            font-size: 20px;
+
+        }
+
+        .card {
+            padding: 15px;
+            margin: 10px auto;
+            box-shadow: 3px 0px 15px #999;
+            width: 40%;
+            border-radius: 10px;
+        }
+
+        .output {
+            color: white;
+            font-size: 17px;
+            padding: 5px;
+            text-align: left;
+        }
+
+        h2 {
+            color: white;
+            font-size: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Weight Converter
+        </h1>
+    </header>
+
+    <section id="Converter">
+
+        <form action="" class="my-form">
+            <div>
+                <input type="number" placeholder="Convert KG here..." id="input">
+            </div>
+        </form>
+
+        <div id="container">
+
+            <div class="card" style="background-color: red;">
+                <h2>Pounds:</h2>
+                <div id="pounds" class="output"></div>
+            </div>
+
+            <div class="card" style="background-color: green;">
+                <h2>Grams:</h2>
+                <div id="grams" class="output"></div>
+            </div>
+
+            <div class="card" style="background-color: blue;">
+                <h2>Ounces:</h2>
+                <div id="ounces" class="output"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+<script>
+    const container = document.getElementById('container')
+    const input = document.getElementById('input')
+    const pounds = document.getElementById('pounds')
+    const ounces = document.getElementById('ounces')
+    const grams = document.getElementById('grams')
+
+    container.style.display = "none"
+
+    input.addEventListener
+        ('input', (e) => {
+            container.style.display = ""
+            let converter = input.value;
+
+            pounds.innerHTML = converter * 2.205
+            grams.innerHTML = converter * 1000
+            ounces.innerHTML = converter * 35.274
+
+        })
+
+</script>
+
+</html>
